@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sai Bharath Reddy Yerragudi | Data Analyst Portfolio</title>
+<meta content="Portfolio of Sai Bharath Reddy Yerragudi — Data Analyst and aspiring Data Engineer with experience in SQL, Python, ETL, dashboards, AWS, Databricks, and PySpark." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg: #0b0d10;
+      --bg-soft: #11151a;
+      --surface: #121821;
+      --surface-2: #171e28;
+      --surface-3: #f8fafc;
+      --surface-4: #ffffff;
+      --border: rgba(255,255,255,0.09);
+      --border-dark: rgba(15,23,42,0.08);
+      --text: #f8fafc;
+      --text-soft: rgba(248,250,252,0.78);
+      --text-muted: rgba(248,250,252,0.58);
+      --heading: #0f172a;
+      --body: #334155;
+      --body-soft: #64748b;
+      --blue: #3b82f6;
+      --blue-soft: #93c5fd;
+      --blue-light: #dbeafe;
+      --green: #22c55e;
+      --gold: #fbbf24;
+      --shadow: 0 22px 60px rgba(0,0,0,0.25);
+      --shadow-soft: 0 16px 36px rgba(15,23,42,0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--surface-3);
+      color: var(--body);
+      line-height: 1.7;
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ::selection { background: var(--blue-light); color: #0f172a; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .section { padding: 92px 0; }
+    .section-alt { background: #fff; }
+    .section-head { margin-bottom: 30px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 999px;
+      background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe;
+      font-size: 0.76rem; font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08; letter-spacing: -0.04em; color: var(--heading);
+      margin-bottom: 10px; font-weight: 800;
+    }
+    .section-copy {
+      color: var(--body-soft); max-width: 760px; font-size: 1rem; font-weight: 700;
+    }
+
+    #navbar {
+      position: fixed; inset: 0 0 auto 0; z-index: 200; height: 76px;
+      background: rgba(11,13,16,0.84); backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: box-shadow .25s ease, background .25s ease;
+    }
+    #navbar.scrolled {
+      box-shadow: 0 16px 34px rgba(0,0,0,0.18); background: rgba(11,13,16,0.94);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px)); height: 100%; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .nav-logo {
+      color: #fff; font-size: 1.08rem; font-weight: 800; letter-spacing: -0.03em;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.82); font-size: .94rem; font-weight: 500;
+      padding: 9px 14px; border-radius: 10px; transition: .2s ease;
+    }
+    .nav-links a:hover {
+      color: #fff; background: rgba(255,255,255,.06);
+    }
+
+    .hero {
+      min-height: 100vh; padding: 132px 0 80px; background:
+        radial-gradient(circle, rgba(255,255,255,0.12) 1.4px, transparent 1.4px),
+        linear-gradient(180deg, #0b0d10 0%, #0d1015 100%);
+      background-size: 52px 52px, cover;
+      position: relative;
+    }
+    .hero-grid {
+      width: min(var(--max), calc(100% - 40px)); margin: 0 auto;
+      display: grid; grid-template-columns: 1.08fr .92fr; gap: 54px; align-items: start;
+    }
+    .hero-left { color: var(--text); padding-top: 8px; }
+    .hero-greeting {
+      font-size: clamp(1.35rem, 2vw, 1.55rem); font-weight: 700; color: #fff; margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.6rem); line-height: .98; font-weight: 900;
+      letter-spacing: -0.05em; color: #fff; margin-bottom: 18px;
+    }
+    .hero-title-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .hero-title .accent {
+      display: block;
+      margin-top: 10px;
+      color: var(--blue-soft);
+    }
+    .hero-path {
+      display: inline-flex; align-items: center; gap: 14px; flex-wrap: nowrap;
+      margin: 16px 0 28px; font-size: clamp(1rem, 1.55vw, 1.55rem);
+      font-weight: 900; letter-spacing: -0.04em; white-space: nowrap;
+      max-width: 100%;
+    }
+    .hero-path span { color: #fff; white-space: nowrap; }
+    .hero-path .role-end { color: var(--blue-soft); }
+    .hero-path svg { width: 128px; height: 22px; flex-shrink: 0; }
+    .wave-hand {
+      display: inline-block;
+      transform-origin: 70% 70%;
+      animation: waveHand 1.15s ease-in-out infinite;
+      margin-left: 0;
+      line-height: 1;
+      filter: drop-shadow(0 6px 14px rgba(147,197,253,.18));
+    }
+    .hero-arrow-line { stroke: rgba(147,197,253,.38); stroke-width: 2.5; stroke-linecap: round; }
+    .hero-arrow-animated {
+      stroke: var(--blue-soft); stroke-width: 2.5; stroke-linecap: round;
+      stroke-dasharray: 14 10; animation: arrowFlow 1.45s linear infinite;
+    }
+    @keyframes arrowFlow { to { stroke-dashoffset: -48; } }
+    @keyframes waveHand {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-10deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-6deg); }
+      50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); }
+    }
+    .hero-summary {
+      color: var(--text-soft); max-width: 720px; font-size: 1.08rem; line-height: 1.9; font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .hero-links {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;
+    }
+    .hero-links-under-photo {
+      width: min(340px, 72vw);
+      margin-top: 18px;
+      justify-content: center;
+      align-self: center;
+    }
+    .hero-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 24px; border-radius: 999px; font-size: .98rem; font-weight: 700;
+      transition: .2s ease; border: 1px solid transparent;
+    }
+    .hero-btn.primary {
+      background: #fff; color: #0b0d10;
+    }
+    .hero-btn.primary:hover {
+      transform: translateY(-2px); box-shadow: 0 16px 32px rgba(255,255,255,.12);
+    }
+    .hero-btn.secondary {
+      background: transparent; color: #fff; border-color: rgba(255,255,255,.18);
+    }
+    .hero-btn.secondary:hover {
+      background: rgba(255,255,255,.06); transform: translateY(-2px);
+    }
+    .hero-note {
+      margin-top: 14px; color: var(--text-muted); font-size: .92rem;
+    }
+
+    .link-with-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .link-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .link-icon svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+      fill: currentColor;
+    }
+    .contact-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+    
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 28px;
+    }
+    .portrait-card {
+      width: min(340px, 72vw);
+      height: min(340px, 72vw);
+      margin: 8px auto 0;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 6px solid rgba(255,255,255,.95);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .16);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      position: relative;
+      transform: none;
+    }
+    .portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+      border-radius: 50%;
+      background: #ffffff;
+      transform: none;
+    }
+    .portrait-fallback {
+      min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 40px; text-align: center; color: #fff;
+      background: linear-gradient(135deg, rgba(59,130,246,.18), rgba(255,255,255,.04));
+    }
+    .portrait-fallback .initials {
+      width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center;
+      font-size: 2rem; font-weight: 800; background: rgba(255,255,255,.12); margin-bottom: 16px;
+    }
+
+    .skills {
+      background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    }
+    .skills-toolbar {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;
+    }
+    .skill-filter {
+      border: 1px solid #dbe7f5; background: #fff; color: var(--body);
+      padding: 10px 16px; border-radius: 999px; font-weight: 700; font-size: .92rem; cursor: pointer;
+      transition: .2s ease;
+    }
+    .skill-filter.active, .skill-filter:hover {
+      background: #0f172a; color: #fff; border-color: #0f172a;
+    }
+    .skills-layout {
+      display: block;
+    }
+    .skills-logo-grid {
+      display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px;
+    }
+    .skill-tile {
+      border: 1px solid #e2e8f0; background: #fff; border-radius: 22px; padding: 20px 18px;
+      text-align: left; cursor: pointer; transition: .22s ease; min-height: 198px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: var(--shadow-soft);
+    }
+    .skill-tile:hover, .skill-tile.active {
+      transform: translateY(-4px); box-shadow: 0 18px 38px rgba(59,130,246,.12); border-color: #bfdbfe;
+    }
+    .skill-logo-wrap {
+      width: 62px; height: 62px; border-radius: 16px; background: #f8fafc;
+      display: flex; align-items: center; justify-content: center; padding: 10px;
+      border: 1px solid #e2e8f0;
+    }
+    .skill-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .skill-monogram {
+      font-weight: 800; color: #0f172a; font-size: 1.05rem; letter-spacing: -0.03em;
+    }
+    .skill-name {
+      font-size: 1.08rem; font-weight: 800; color: var(--heading); margin-top: 18px;
+    }
+    .skill-category {
+      color: var(--body-soft); font-size: .92rem; margin-top: 4px; font-weight: 700;
+    }
+    .skill-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+    }
+    .skill-tags span {
+      font-size: .74rem; padding: 6px 10px; border-radius: 999px;
+      background: #eff6ff; color: var(--blue); font-weight: 700;
+    }
+
+    .skill-spotlight {
+      position: sticky; top: 112px; border-radius: 28px; background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+      color: #fff; padding: 26px; border: 1px solid rgba(255,255,255,.07); box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .spotlight-label {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--blue-soft); font-size: .8rem;
+      font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: 14px;
+    }
+    .spotlight-title {
+      font-size: clamp(1.6rem, 2vw, 2rem); line-height: 1.05; letter-spacing: -.04em; margin-bottom: 14px;
+    }
+    .spotlight-copy {
+      color: rgba(248,250,252,.78); font-size: 1rem; line-height: 1.8; margin-bottom: 18px;
+    }
+    .spotlight-meta {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .spotlight-meta span {
+      padding: 8px 12px; border-radius: 999px; background: rgba(147,197,253,.14);
+      color: var(--blue-soft); font-weight: 700; font-size: .84rem;
+      border: 1px solid rgba(147,197,253,.18);
+    }
+
+    
+    .certifications {
+      background: #fff;
+    }
+    .cert-wrap {
+      display: block;
+    }
+    .cert-marquee {
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid #e2e8f0;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      box-shadow: var(--shadow-soft);
+      padding: 24px 0;
+      position: relative;
+    }
+    .cert-marquee::before,
+    .cert-marquee::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .cert-marquee::before {
+      left: 0;
+      background: linear-gradient(90deg, #f8fafc, rgba(248,250,252,0));
+    }
+    .cert-marquee::after {
+      right: 0;
+      background: linear-gradient(270deg, #ffffff, rgba(255,255,255,0));
+    }
+    .cert-marquee-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      animation: certScroll 22s linear infinite;
+      padding-inline: 24px;
+      align-items: stretch;
+    }
+    .cert-marquee:hover .cert-marquee-track {
+      animation-play-state: paused;
+    }
+    @keyframes certScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .cert-marquee-card {
+      width: 240px;
+      min-height: 280px;
+      flex: 0 0 240px;
+      border-radius: 24px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      box-shadow: 0 14px 30px rgba(15,23,42,.07);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .cert-marquee-card:hover {
+      transform: translateY(-6px);
+      border-color: #bfdbfe;
+      box-shadow: 0 18px 36px rgba(59,130,246,.14);
+    }
+    .cert-marquee-card img {
+      max-width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,.14));
+      margin-bottom: 14px;
+    }
+    .cert-marquee-card h4 {
+      color: var(--heading);
+      font-size: 1rem;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    .cert-title-card {
+      align-items: flex-start;
+      justify-content: space-between;
+      text-align: left;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: #fff;
+    }
+    .cert-title-card .cert-small-label {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .cert-title-card h3 {
+      font-size: 1.7rem;
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      margin-top: auto;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .cert-title-card p {
+      color: rgba(248,250,252,.8);
+      font-size: .98rem;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+    .cert-marquee-card .cert-meta {
+      color: var(--body-soft);
+      font-size: .84rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .cert-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+    }
+.education {
+      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+      color: #fff;
+    }
+    .education-card {
+      border-radius: 34px; overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow); padding: 36px;
+      display: grid; grid-template-columns: 260px 1fr; gap: 34px; align-items: center;
+    }
+    .education-logo-wrap {
+      border-radius: 28px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+      padding: 24px; display: flex; align-items: center; justify-content: center; min-height: 240px;
+    }
+    .education-logo-wrap img { width: 120px; max-width: 100%; }
+    .education-copy .eyebrow {
+      background: rgba(147,197,253,.12); color: var(--blue-soft); border-color: rgba(147,197,253,.24);
+    }
+    .education-copy h2 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.02; letter-spacing: -.05em;
+      margin-bottom: 14px; color: #fff;
+    }
+    .education-copy p {
+      color: rgba(248,250,252,.82); font-size: 1.08rem; max-width: 720px; font-weight: 700;
+    }
+    .edu-stats {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px;
+    }
+    .edu-stat {
+      padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08);
+      min-width: 160px;
+    }
+    .edu-stat .label {
+      color: rgba(248,250,252,.56); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: 4px;
+    }
+    .edu-stat .value {
+      color: #fff; font-size: 1.04rem; font-weight: 800;
+    }
+
+    .projects {
+      background: #fff;
+    }
+    .projects-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    }
+    .project-card {
+      border: 1px solid #e2e8f0; background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+      box-shadow: var(--shadow-soft); border-radius: 26px; padding: 28px; transition: .22s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px); box-shadow: 0 18px 38px rgba(59,130,246,.12); border-color: #bfdbfe;
+    }
+    .project-label {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px;
+      background: #eff6ff; color: var(--blue); font-size: .78rem; font-weight: 800; margin-bottom: 16px;
+    }
+    .project-card h3 {
+      font-size: 1.3rem; line-height: 1.2; color: var(--heading); letter-spacing: -.03em; margin-bottom: 10px;
+    }
+    .project-card p { color: var(--body); margin-bottom: 16px; font-weight: 700; }
+    .project-list {
+      padding-left: 20px; margin-bottom: 18px; color: var(--body);
+    }
+    .project-list li { margin-bottom: 10px; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+    .project-tech span {
+      padding: 8px 12px; border-radius: 999px; background: #f1f5f9; color: #0f172a; font-weight: 700; font-size: .84rem;
+    }
+
+    .experience {
+      background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    }
+    .resume-callout {
+      margin-top: 12px; color: var(--body-soft); font-size: .96rem;
+    }
+    .resume-callout a {
+      color: var(--blue); font-weight: 700;
+    }
+    .exp-grid {
+      display: grid; gap: 16px;
+    }
+    .exp-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+      padding: 22px 24px; border-radius: 22px; background: #fff; border: 1px solid #e2e8f0; box-shadow: var(--shadow-soft);
+    }
+    .exp-card h3 {
+      font-size: 1.16rem; color: var(--heading); letter-spacing: -.02em; margin-bottom: 4px;
+    }
+    .exp-org {
+      color: var(--body); font-weight: 600;
+    }
+    .exp-meta {
+      text-align: right;
+    }
+    .exp-date {
+      font-weight: 800; color: var(--heading);
+    }
+    .exp-track {
+      color: var(--body-soft); font-size: .92rem; margin-top: 4px; font-weight: 700;
+    }
+
+    .contact {
+      background: #fff;
+    }
+    .contact-card {
+      border-radius: 28px; border: 1px solid #e2e8f0; background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+      box-shadow: var(--shadow-soft); padding: 16px;
+    }
+    .contact-link {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 18px 14px; border-radius: 18px; font-weight: 800; color: var(--heading);
+      transition: .2s ease;
+    }
+    .contact-link + .contact-link { border-top: 1px solid #eef2f7; }
+    .contact-link:hover {
+      background: #eff6ff;
+    }
+    footer {
+      padding: 34px 0 50px; background: #0b0d10; color: rgba(248,250,252,.66); text-align: center;
+      font-size: .94rem;
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(24px); transition: .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1; transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .skills-layout, .cert-wrap, .education-card, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .skill-spotlight, .cert-spotlight { position: static; }
+      .portrait-card, .portrait-fallback { min-height: 420px; }
+      .portrait-card img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 22px;
+      background: #ffffff;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .section { padding: 74px 0; }
+      .hero { padding-top: 112px; }
+      .container, .nav-inner, .hero-grid { width: min(var(--max), calc(100% - 24px)); }
+      .hero-title-line { white-space: normal; }
+      .skills-logo-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .skill-tile { min-height: 176px; }
+      .cert-card { min-height: 210px; }
+      .exp-meta { text-align: left; }
+      .hero-path { flex-wrap: wrap; white-space: normal; }
+      .hero-path svg { width: 120px; }
+      .education-card { padding: 24px; }
+    }
+
+    @media (max-width: 540px) {
+      .skills-logo-grid { grid-template-columns: 1fr; }
+      .hero-links { gap: 10px; }
+      .hero-btn { width: 100%; }
+      .hero-path { gap: 8px; flex-wrap: wrap; white-space: normal; }
+      .hero-path svg { width: 100px; }
+      .project-card { padding: 22px; }
+      .exp-card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+<div class="nav-inner">
+<a class="nav-logo" href="#hero">Sai Bharath Reddy</a>
+<div class="nav-links">
+<a href="#skills">Skills</a>
+<a href="#certifications">Certifications</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<section class="hero" id="hero">
+<div class="hero-grid">
+<div class="hero-left reveal visible">
+<p class="hero-greeting">Hello,</p>
+<h1 class="hero-title"><span class="hero-title-line"><span>Bharath here!</span><span aria-hidden="true" class="wave-hand">👋</span></span><span class="accent">Let’s build with data.</span></h1>
+<div aria-label="Career direction" class="hero-path">
+<span>Data Analyst</span>
+<svg aria-hidden="true" viewbox="0 0 120 20">
+<line class="hero-arrow-line" x1="4" x2="96" y1="10" y2="10"></line>
+<line class="hero-arrow-animated" x1="4" x2="96" y1="10" y2="10"></line>
+<path d="M92 4 L104 10 L92 16" fill="none" stroke="#93c5fd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="role-end">Aspiring Data Engineer</span>
+</div>
+<p class="hero-summary">
+          I’m a <strong>Data Analyst with 2+ years of experience</strong> working with SQL, Python, ETL workflows, dashboards, and cloud-based data platforms. I enjoy turning raw data into clear business insights, and I’m currently growing toward Data Engineering with PySpark, Databricks, and scalable cloud workflows.
+        </p>
+<p class="hero-summary">
+          My work sits at the intersection of analytics, reporting, and modern data systems — focused on building solutions that are clear, useful, and business-driven.
+        </p>
+<div class="hero-links">
+<a class="hero-btn primary" href="#projects">My Work</a>
+<a class="hero-btn secondary" href="https://www.linkedin.com/in/bharathyerragudi/" rel="noreferrer" target="_blank"><span class="link-with-icon"><span aria-hidden="true" class="link-icon"><svg viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3ZM20.44 12.86c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.36V20h3.38v-6.39c0-1.68.32-3.31 2.4-3.31 2.05 0 2.08 1.92 2.08 3.42V20h3.38v-7.14Z"></path></svg></span><span>LinkedIn</span></span></a>
+<a class="hero-btn secondary" href="https://github.com/saibharathyerragudi" rel="noreferrer" target="_blank"><span class="link-with-icon"><span aria-hidden="true" class="link-icon"><svg viewbox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.04.78 2.1v3.11c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path></svg></span><span>GitHub</span></span></a>
+<a class="hero-btn secondary" download="" href="Bharath_Resume.pdf"><span class="link-with-icon"><span aria-hidden="true" class="link-icon"><svg viewbox="0 0 24 24"><path d="M7 2.75A1.75 1.75 0 0 0 5.25 4.5v15A1.75 1.75 0 0 0 7 21.25h10A1.75 1.75 0 0 0 18.75 19.5V8.56a1.75 1.75 0 0 0-.51-1.24l-3.05-3.06a1.75 1.75 0 0 0-1.24-.51H7Zm6 .5v4.5h4.5M8.5 11h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5Zm0 3.5h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5Zm0-7h2.5a.75.75 0 0 1 0 1.5H8.5a.75.75 0 0 1 0-1.5Z"></path></svg></span><span>Resume</span></span></a>
+<a class="hero-btn secondary" href="mailto:saibharathreddyyerragudi@gmail.com"><span class="link-with-icon"><span aria-hidden="true" class="link-icon"><svg viewbox="0 0 24 24"><path d="M3.75 5.5h16.5A1.75 1.75 0 0 1 22 7.25v9.5A1.75 1.75 0 0 1 20.25 18.5H3.75A1.75 1.75 0 0 1 2 16.75v-9.5A1.75 1.75 0 0 1 3.75 5.5Zm.17 1.5L12 12.85 20.08 7H3.92Zm16.58 1.87-8.06 5.84a.75.75 0 0 1-.88 0L3.5 8.87v7.88c0 .14.11.25.25.25h16.5c.14 0 .25-.11.25-.25V8.87Z"></path></svg></span><span>Gmail</span></span></a>
+</div>
+</div>
+<div class="hero-right reveal visible">
+<div class="portrait-card">
+<img alt="Sai Bharath Reddy Yerragudi portrait" class="portrait-photo" src="assets/bharath-photo.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section class="section skills" id="skills">
+<div class="container">
+<div class="section-head reveal">
+<h2 class="section-title">Skills Stack.</h2>
+</div>
+<div class="skills-toolbar reveal">
+<button class="skill-filter active" data-filter="all">All</button>
+<button class="skill-filter" data-filter="languages">Languages</button>
+<button class="skill-filter" data-filter="engineering">Data Engineering</button>
+<button class="skill-filter" data-filter="bi">BI &amp; Analytics</button>
+<button class="skill-filter" data-filter="cloud">Cloud</button>
+</div>
+<div class="skills-layout">
+<div class="skills-logo-grid">
+<button class="skill-tile reveal active" data-category="languages" data-copy="A core part of my analytics work for querying, data validation, transformations, KPI reporting, and business analysis." data-tags="Querying,Reporting,Validation" data-title="SQL">
+<div class="skill-logo-wrap"><img alt="SQL icon" src="assets/sql-icon.svg"/></div>
+<div>
+<div class="skill-name">SQL</div>
+<div class="skill-category">Languages</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="languages" data-copy="Used for data cleaning, automation, analytics workflows, and preparing structured datasets for business reporting." data-tags="Automation,Analysis,Cleaning" data-title="Python">
+<div class="skill-logo-wrap"><img alt="Python logo" src="assets/python-logo.svg"/></div>
+<div>
+<div class="skill-name">Python</div>
+<div class="skill-category">Languages</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="languages" data-copy="Included in my toolkit for structured analytics workflows and statistical work when required." data-tags="Analytics,Statistical,Structured" data-title="SAS">
+<div class="skill-logo-wrap"><img alt="SAS logo" src="assets/sas-logo.png"/></div>
+<div>
+<div class="skill-name">SAS</div>
+<div class="skill-category">Languages</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="engineering cloud" data-copy="My strongest cloud credential area, supporting analytics workflows and AWS-based data platform understanding." data-tags="Cloud,AWS,Architecture" data-title="AWS">
+<div class="skill-logo-wrap"><img alt="AWS logo" src="assets/aws-logo.svg"/></div>
+<div>
+<div class="skill-name">AWS</div>
+<div class="skill-category">Cloud</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="cloud" data-copy="Used as part of my cloud and data tooling stack, especially around Azure-based data services and integration workflows." data-tags="Cloud,Platform,Integration" data-title="Azure">
+<div class="skill-logo-wrap"><img alt="Azure logo" src="assets/azure-logo.png"/></div>
+<div>
+<div class="skill-name">Azure</div>
+<div class="skill-category">Cloud</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="engineering cloud" data-copy="Relevant for building and orchestrating ETL-style workflows as part of modern data movement and integration pipelines." data-tags="ETL,Orchestration,Pipelines" data-title="Azure Data Factory">
+<div class="skill-logo-wrap"><img alt="Azure Data Factory logo" src="assets/azure-data-factory.png"/></div>
+<div>
+<div class="skill-name">Azure Data Factory</div>
+<div class="skill-category">Data Engineering</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="engineering" data-copy="Part of my move into stronger data engineering, supporting scalable transformations and distributed data processing." data-tags="Distributed,Big Data,ETL" data-title="PySpark">
+<div class="skill-logo-wrap"><img alt="PySpark logo" src="assets/pyspark-logo.svg"/></div>
+<div>
+<div class="skill-name">PySpark</div>
+<div class="skill-category">Data Engineering</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="engineering" data-copy="Supports modern lakehouse-style workflows and cleaner data layers for analytics-ready consumption." data-tags="Lakehouse,Data Layers,Scalable" data-title="Delta Lake">
+<div class="skill-logo-wrap"><img alt="Delta Lake logo" src="assets/delta-lake-logo.png"/></div>
+<div>
+<div class="skill-name">Delta Lake</div>
+<div class="skill-category">Data Engineering</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="bi" data-copy="Used to build KPI dashboards and clear visual reporting for stakeholders and business teams." data-tags="Dashboards,KPIs,Reporting" data-title="Power BI">
+<div class="skill-logo-wrap"><img alt="Power BI logo" src="assets/power-bi-logo.png"/></div>
+<div>
+<div class="skill-name">Power BI</div>
+<div class="skill-category">BI &amp; Analytics</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="bi" data-copy="Used for visual analytics and reporting to make trends and business patterns easier to explore and explain." data-tags="Visual Analytics,Reporting,Insights" data-title="Tableau">
+<div class="skill-logo-wrap"><img alt="Tableau logo" src="assets/tableau-logo.png"/></div>
+<div>
+<div class="skill-name">Tableau</div>
+<div class="skill-category">BI &amp; Analytics</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="bi cloud" data-copy="Used for lightweight AWS-native dashboarding and stakeholder-facing reporting in cloud environments." data-tags="AWS BI,Dashboards,Cloud Reporting" data-title="Amazon QuickSight">
+<div class="skill-logo-wrap"><img alt="Amazon QuickSight logo" src="assets/amazon-quicksight-logo.png"/></div>
+<div>
+<div class="skill-name">Amazon QuickSight</div>
+<div class="skill-category">BI &amp; Analytics</div>
+</div>
+</button>
+<button class="skill-tile reveal" data-category="engineering" data-copy="Part of my project work and learning path for stronger scalable processing, notebook-based development, and engineering workflows." data-tags="Lakehouse,Scalable,Engineering" data-title="Databricks">
+<div class="skill-logo-wrap"><img alt="Databricks logo" src="assets/databricks-logo.svg"/></div>
+<div>
+<div class="skill-name">Databricks</div>
+<div class="skill-category">Data Engineering</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="section certifications" id="certifications">
+<div class="container">
+<div class="section-head reveal">
+<h2 class="section-title">Certifications</h2>
+</div>
+<div class="cert-wrap">
+<div class="cert-marquee reveal">
+<div class="cert-marquee-track">
+<article class="cert-marquee-card">
+<img alt="AWS Solutions Architect Associate badge" src="assets/aws-solutions-architect-associate.png"/>
+<h4>Solutions Architect Associate</h4>
+<div class="cert-meta">AWS Certified</div>
+</article>
+<article class="cert-marquee-card">
+<a class="cert-link" href="https://www.credly.com/badges/d0d73755-11c3-43f9-8d88-6342acf00a19/linked_in_profile" rel="noreferrer" target="_blank">
+<img alt="AWS Cloud Practitioner badge" src="assets/aws-cloud-practitioner.png"/>
+<h4>Cloud Practitioner</h4>
+<div class="cert-meta">AWS Certified</div>
+</a>
+</article>
+<article class="cert-marquee-card">
+<img alt="AWS Academy Data Analytics badge" src="assets/aws-academy-data-analytics.png"/>
+<h4>Data Analytics</h4>
+<div class="cert-meta">AWS Academy</div>
+</article>
+<article class="cert-marquee-card">
+<img alt="AWS Academy Cloud Foundations badge" src="assets/aws-academy-cloud-foundations.png"/>
+<h4>Cloud Foundations</h4>
+<div class="cert-meta">AWS Academy</div>
+</article>
+<article class="cert-marquee-card">
+<a class="cert-link" href="https://coursera.org/share/d7288c7ab76ba3bdb3f46fff50bf7e66" rel="noreferrer" target="_blank">
+<img alt="Google Data Analysis with R Programming badge" src="assets/google-data-analysis-r.png"/>
+<h4>Data Analysis with R Programming</h4>
+<div class="cert-meta">Google</div>
+</a>
+</article>
+<article class="cert-marquee-card">
+<img alt="AWS Solutions Architect Associate badge" src="assets/aws-solutions-architect-associate.png"/>
+<h4>Solutions Architect Associate</h4>
+<div class="cert-meta">AWS Certified</div>
+</article>
+<article class="cert-marquee-card">
+<a class="cert-link" href="https://www.credly.com/badges/d0d73755-11c3-43f9-8d88-6342acf00a19/linked_in_profile" rel="noreferrer" target="_blank">
+<img alt="AWS Cloud Practitioner badge" src="assets/aws-cloud-practitioner.png"/>
+<h4>Cloud Practitioner</h4>
+<div class="cert-meta">AWS Certified</div>
+</a>
+</article>
+<article class="cert-marquee-card">
+<img alt="AWS Academy Data Analytics badge" src="assets/aws-academy-data-analytics.png"/>
+<h4>Data Analytics</h4>
+<div class="cert-meta">AWS Academy</div>
+</article>
+<article class="cert-marquee-card">
+<img alt="AWS Academy Cloud Foundations badge" src="assets/aws-academy-cloud-foundations.png"/>
+<h4>Cloud Foundations</h4>
+<div class="cert-meta">AWS Academy</div>
+</article>
+<article class="cert-marquee-card">
+<a class="cert-link" href="https://coursera.org/share/d7288c7ab76ba3bdb3f46fff50bf7e66" rel="noreferrer" target="_blank">
+<img alt="Google Data Analysis with R Programming badge" src="assets/google-data-analysis-r.png"/>
+<h4>Data Analysis with R Programming</h4>
+<div class="cert-meta">Google</div>
+</a>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section education" id="education">
+<div class="container">
+<div class="section-head reveal">
+<h2 class="section-title">Education</h2>
+</div>
+<div class="education-card reveal">
+<div class="education-logo-wrap">
+<img alt="University of Central Florida logo" src="assets/university-of-central-florida-logo.png"/>
+</div>
+<div class="education-copy">
+<h2>Master of Science in Computer Science</h2>
+<p>University of Central Florida · Orlando, Florida</p>
+<div class="edu-stats">
+<div class="edu-stat">
+<div class="label">Duration</div>
+<div class="value">Aug 2024 – May 2026</div>
+</div>
+<div class="edu-stat">
+<div class="label">CGPA</div>
+<div class="value">4.0 / 4.0</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section projects" id="projects">
+<div class="container">
+<div class="section-head reveal">
+<h2 class="section-title">Projects.</h2>
+</div>
+<div class="projects-grid">
+<article class="project-card reveal">
+<span class="project-label">Project 01</span>
+<h3>Airline Pricing &amp; Route Performance Analysis</h3>
+<p>Built an end-to-end analytics workflow around airline route, pricing, and operational data to understand route performance, utilization patterns, and pricing behavior.</p>
+<ul class="project-list">
+<li>Designed a Databricks and PySpark ETL flow to prepare route and pricing datasets for scalable analysis.</li>
+<li>Used SQL analytics and regression-based analysis to explore pricing trends, route utilization, and demand patterns.</li>
+<li>Presented key route performance insights through a Power BI dashboard for easier business interpretation.</li>
+</ul>
+<div class="project-tech">
+<span>Databricks</span><span>PySpark</span><span>SQL</span><span>Power BI</span><span>ETL</span>
+</div>
+</article>
+<article class="project-card reveal">
+<span class="project-label">Project 02</span>
+<h3>Medicare Provider Utilization &amp; Cost Analysis</h3>
+<p>Analysed CMS Medicare provider utilization and payment data to surface cost drivers, high-cost services, and provider-level spend patterns for healthcare-focused reporting.</p>
+<ul class="project-list">
+<li>Worked with Python and SQL to clean, analyse, and structure Medicare claims data for decision-friendly reporting.</li>
+<li>Explored regression-based cost patterns to better understand utilization and spending behavior.</li>
+<li>Built KPI-style visual reporting in Power BI to highlight high-impact provider and service segments.</li>
+</ul>
+<div class="project-tech">
+<span>Python</span><span>SQL</span><span>Power BI</span><span>CMS Medicare</span><span>Regression</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section experience" id="experience">
+<div class="container">
+<div class="section-head reveal">
+<h2 class="section-title">Where I’ve worked.</h2>
+<p class="section-copy">A quick view of my roles. The full detail stays in the resume.</p>
+<p class="resume-callout">For the full breakdown, see the
+        <a class="contact-link reveal" href="https://www.linkedin.com/in/bharathyerragudi/" rel="noreferrer" target="_blank">
+<span><span class="link-with-icon"><span aria-hidden="true" class="link-icon"><svg viewbox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3ZM20.44 12.86c0-3.47-1.85-5.08-4.32-5.08-1.99 0-2.88 1.09-3.38 1.86V8.5H9.36V20h3.38v-6.39c0-1.68.32-3.31 2.4-3.31 2.05 0 2.08 1.92 2.08 3.42V20h3.38v-7.14Z"></path></svg></span><span>LinkedIn</span></span></span><span>linkedin.com/in/bharathyerragudi</span>
+</a>
+<a class="contact-link reveal" href="https://github.com/saibharathyerragudi" rel="noreferrer" target="_blank">
+<span><span class="link-with-icon"><span aria-hidden="true" class="link-icon"><svg viewbox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.04.78 2.1v3.11c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path></svg></span><span>GitHub</span></span></span><span>github.com/saibharathyerragudi</span>
+</a>
+</p></div>
+</div>
+</section>
+<footer>
+<div class="container">
+      Sai Bharath Reddy Yerragudi · Data Analyst · Aspiring Data Engineer · Orlando, Florida
+    </div>
+</footer>
+<script>
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 16);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    const filterButtons = document.querySelectorAll('.skill-filter');
+    const skillTiles = document.querySelectorAll('.skill-tile');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+
+        skillTiles.forEach((tile) => {
+          const categories = (tile.dataset.category || '').split(' ');
+          const show = filter === 'all' || categories.includes(filter);
+          tile.style.display = show ? 'flex' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

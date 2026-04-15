@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="PySpark logo">
+  <rect width="128" height="128" rx="24" fill="#ffffff"/>
+  <circle cx="64" cy="64" r="44" fill="#FFF3E8"/>
+  <path d="M34 82c10 8 24 12 38 12 10 0 19-2 27-5" fill="none" stroke="#E25A1C" stroke-width="8" stroke-linecap="round"/>
+  <path d="M30 52c9-8 21-12 34-12 13 0 25 3 35 10" fill="none" stroke="#F88909" stroke-width="8" stroke-linecap="round"/>
+  <path d="M52 32l14 12-14 12" fill="none" stroke="#1F2937" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="64" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#1F2937">Spark</text>
+  <text x="64" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="16" fill="#6B7280">PySpark</text>
+</svg>
